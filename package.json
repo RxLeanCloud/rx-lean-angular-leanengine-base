@@ -2,25 +2,24 @@
   "name": "todo-live-query-web",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "scripts": {},
   "private": true,
   "dependencies": {
+    "@angular/animations": "^4.1.3",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
+    "@angular/flex-layout": "^2.0.0-beta.8",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
+    "@angular/material": "^2.0.0-beta.5",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.3",
+    "leanengine": "^2.0.3",
+    "rx-lean-angular": "^0.2.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
@@ -42,5 +41,8 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
+  },
+  "engines": {
+    "node": "6.x"
   }
 }

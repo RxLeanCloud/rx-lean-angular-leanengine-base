@@ -1,3 +1,63 @@
-<h1>
-  {{title}}
-</h1>
+<div class="containerX" fxFlex>
+  <div fxLayout="row" class="colored box">
+    <div fxFlex="20"> </div>
+    <div fxFlex="60">
+      <md-toolbar color="primary">
+        <span>Todo With LiveQuery</span>
+        <span class="spacer"></span>
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+        <md-menu #menu="mdMenu">
+          <button md-menu-item>
+        <md-icon>fingerprint</md-icon>
+        <span>Login</span>
+      </button>
+          <button md-menu-item disabled>
+        <md-icon>announcement</md-icon>
+        <span>Issues</span>
+      </button>
+          <button md-menu-item>
+        <md-icon>notifications_off</md-icon>
+        <span>Disable alerts</span>
+      </button>
+        </md-menu>
+      </md-toolbar>
+      <md-list>
+        <h3 md-subheader>Doing</h3>
+        <md-list-item *ngFor="let todo of doing">
+          <md-checkbox md-list-icon (change)="checked(todo)"></md-checkbox>
+          <h4 md-line>{{todo.get('title')}}</h4>
+        </md-list-item>
+        <md-divider></md-divider>
+        <h3 md-subheader>Done</h3>
+        <md-list-item *ngFor="let todo of done">
+          <md-checkbox md-list-icon (change)="unchecked(todo)" checked="true"></md-checkbox>
+          <h4 md-line>{{todo.get('title')}}</h4>
+        </md-list-item>
+      </md-list>
+    </div>
+    <div fxFlex="20"> </div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="20"> </div>
+    <div fxFlex="60">
+
+
+      <md-card>
+        <md-card-header>
+          <md-card-title>Add a Todo</md-card-title>
+        </md-card-header>
+        <md-card-content>
+          <md-input-container>
+            <input mdInput placeholder="title" [(ngModel)]="title">
+          </md-input-container>
+        </md-card-content>
+        <md-card-actions>
+          <button *ngIf="title.length>0" md-button md-fab color="primary" (click)="add()">Add</button>
+        </md-card-actions>
+      </md-card>
+
+    </div>
+  </div>
+</div>
